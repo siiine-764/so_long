@@ -12,6 +12,7 @@ SRCS =	./tools/ft_messages_error.c\
 		./get_next_line/get_next_line_utils.c\
 		./get_next_line/get_next_line.c\
 		./tools/check_map.c\
+		./tools/ft_put_image.c\
 
 all: $(NAME)
 

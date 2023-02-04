@@ -6,7 +6,7 @@
 /*   By: mayache- <mayache-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 11:58:00 by mayache-          #+#    #+#             */
-/*   Updated: 2023/02/02 15:05:44 by mayache-         ###   ########.fr       */
+/*   Updated: 2023/02/04 15:13:30 by mayache-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,24 @@ int	keyexit(t_info_map *map)
 	exit(0);
 }
 
-int	keyhook(int keycode, t_info_map *map22)
+int	keyhook(int ky, t_info_map *m)
 {
 	void *img_open_door;
 
-	img_open_door = mlx_xpm_file_to_image(map22->mlx, "./textures/door_open.xpm", &map22->i_w, &map22->i_h);
-	if ((keycode == 2 || keycode == 124) && map22->map[map22->y_p][map22->x_p + 1] != '1')
-		ft_to_right(map22);
-	else if ((keycode == 0 || keycode == 123) && map22->map[map22->y_p][map22->x_p - 1] != '1')
-		ft_to_left(map22);
-	else if ((keycode == 13 || keycode == 126) && map22->map[map22->y_p - 1][map22->x_p] != '1')
-		ft_to_up(map22);
-	else if ((keycode == 1 || keycode == 125) && map22->map[map22->y_p + 1][map22->x_p] != '1')
-		ft_to_down(map22);
-	if (map22->c_m == 0)
-		mlx_put_image_to_window(map22->mlx, map22->mlx_w, img_open_door, (map22->x_e) * sz, (map22->y_e) * sz);
-	if (keycode == 53)
+	img_open_door = mlx_xpm_file_to_image(m->mlx, "./textures/DO.xpm", &m->i_w, &m->i_h);
+	if ((ky == 2 || ky == 124) && m->map[m->yp][m->xp + 1] != '1')
+		ft_to_right(m);
+	else if ((ky == 0 || ky == 123) && m->map[m->yp][m->xp - 1] != '1')
+		ft_to_left(m);
+	else if ((ky == 13 || ky == 126) && m->map[m->yp - 1][m->xp] != '1')
+		ft_to_up(m);
+	else if ((ky == 1 || ky == 125) && m->map[m->yp + 1][m->xp] != '1')
+		ft_to_down(m);
+	if (m->c_m == 0)
+		mlx_put_image_to_window(m->mlx, m->mlx_w, img_open_door, (m->x_e) * sz, (m->y_e) * sz);
+	if (ky == 53)
 	{
-		free(map22->map);
+		free(m->map);
 		exit(0);
 	}
 	return (0);
