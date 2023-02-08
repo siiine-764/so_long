@@ -1,12 +1,13 @@
-Best Disco in this Project : <br>
-- https://www.youtube.com/embed/T5sFnuOL8Ck 🧡 <br>
-- https://www.youtube.com/watch?v=-ncOcUjvUTo&list=RDGMEMBlxj8iuIckucuIAbgHzPDQ&index=4 👧🏼 <br>
+Best Disco in this Project :
 
-<video width="320" height="240" controls>
-  <source src="https://www.youtube.com/embed/T5sFnuOL8Ck" type="video/mp4">
-  <source src="https://www.youtube.com/embed/T5sFnuOL8Ck" type="video/ogg">
-Your browser does not support the video tag.
-</video>
+- First song 🧡 
+
+[![IMAGE ALT TEXT HERE](https://i.ytimg.com/vi/T5sFnuOL8Ck/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBJddT46qBxskKpxl_JO4Vlk9WWPA)](https://www.youtube.com/embed/T5sFnuOL8Ck)
+
+- Second song 👧🏼 
+
+[![IMAGE ALT TEXT HERE](https://i.ytimg.com/vi/-ncOcUjvUTo/hqdefault.jpg?sqp=-oaymwExCNACELwBSFryq4qpAyMIARUAAIhCGAHwAQH4Af4JgALQBYoCDAgAEAEYZSBlKGUwDw==&rs=AOn4CLCw5N-6ohWv0-OTTILVh0jQ_s1OmA)](https://www.youtube.com/watch?v=-ncOcUjvUTo&list=RDGMEMBlxj8iuIckucuIAbgHzPDQ&index=4)
+
 
 # so_long
 You must create a basic 2D game in which a dolphin
