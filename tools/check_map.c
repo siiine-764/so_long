@@ -6,13 +6,13 @@
 /*   By: mayache- <mayache-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 11:40:38 by mayache-          #+#    #+#             */
-/*   Updated: 2023/02/02 11:47:36 by mayache-         ###   ########.fr       */
+/*   Updated: 2023/02/08 18:13:04 by mayache-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void check_player(char **p)
+void check_map(char **p)
 {
     int i;
     int players;
@@ -25,6 +25,7 @@ void check_player(char **p)
     doors = 0;
 	coins = 0;
     k = 0;
+
 	while (p[++i])
 	{
 		k = -1;
@@ -36,7 +37,14 @@ void check_player(char **p)
 				doors++;
 			else if (p[i][k] == 'C') 
 				coins++;
+			else if (p[i][k] != 'P' && p[i][k] != '0' && p[i][k] != '1'
+				&& p[i][k] != 'C' && p[i][k] != 'E')
+				{
+					write(1, "error, map invalide, u give me map incorrect\n",45);
+				exit(0);
+				}
 		}
+		printf("%s\n", p[i]);
 	}
 	if (players > 1 || players == 0)
 		ft_err_message_player(players);

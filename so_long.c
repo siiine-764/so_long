@@ -6,7 +6,7 @@
 /*   By: mayache- <mayache-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 19:04:50 by mayache-          #+#    #+#             */
-/*   Updated: 2023/02/04 15:52:40 by mayache-         ###   ########.fr       */
+/*   Updated: 2023/02/08 21:19:48 by mayache-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	ft_read_id(char *map)
 
 	rd_line = open(map, O_RDONLY);
 	if (rd_line < 0)
-		return (-1);
+		return (0);
 	return (rd_line);
 }
 
@@ -80,38 +80,33 @@ void	ft_read_map(char *map)
 		line = get_next_line(rd_id);
 	}
 	m.map = rd_map(map);
-	check_player(m.map);
+	m.mapfake = rd_map(map);
+	check_map(m.map);
+	ft_check_path(m.mapfake);
 	m.mlx = mlx_init();
-	m.mlx_w = mlx_new_window(m.mlx, sz * width, sz * height, "My Window");
+	m.mlx_w = mlx_new_window(m.mlx, sz * width, sz * height, "My Game");
 	ft_put_image(&m);
 	mlx_hook(m.mlx_w, 2, 0, &keyhook, &m);
 	mlx_hook(m.mlx_w, 17, 0, keyexit, &m);
 	mlx_loop(m.mlx);
 }
 
-// void	ft_check_file(char *file)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (file[i])
-// 	{
-// 		if (file[i] == '.')
-// 			if (find(file, ".ber"))
-// 				write (1, "this file is correct\n", 21);
-// 		i++;
-// 	}
-// 	write (1, "what do you want to me??\n", 25);
-// 	exit(1);
-// }
 int	main(int ac, char **av)
 {
+	int file;
+
 	if (ac <= 1)
 	{
-		write(1, "\033[1;31m🛑ERROR \033[0m", 22);
+		write(2, "\033[1;31m🛑accident de travail\n\033[0m", 38);
 		exit(1);
 	}
-	//ft_check_file(av[1]);
+	(void)av;
+	file = ft_read_id(av[1]);
+	if (file <= 0)
+	{
+		write(2, "\033[1;31m🛑ERROR file doesnt exit\n\033[0m", 39);
+		exit(1);
+	}
 	ft_read_map(av[1]);
 	return (0);
 }

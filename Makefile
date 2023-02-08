@@ -1,10 +1,11 @@
-NAME	= so_long.a
+NAME	= so_long
 CC		= gcc
 CFLAGS 	= -Wall -Wextra -Werror
 LIBFT	= libft/libft.a
 FT_PRINTF = ft_printf/libftprintf.a
 
 SRCS =	./tools/ft_messages_error.c\
+		./tools/ft_check_path.c\
 		./tools/movement.c\
 		./tools/ft_strjoin.c\
 		./tools/keys.c\
@@ -13,6 +14,7 @@ SRCS =	./tools/ft_messages_error.c\
 		./get_next_line/get_next_line.c\
 		./tools/check_map.c\
 		./tools/ft_put_image.c\
+		./tools/ft_check_wall.c\
 
 all: $(NAME)
 
@@ -20,17 +22,16 @@ OBJS = $(SRCS:.c=.o)
 
 $(NAME) : $(OBJS) $(LIBFT) $(FT_PRINTF)
 	@$(CC) libft/libft.a -lmlx -framework OpenGL -framework AppKit  $^ -o $@
-	@echo "\033[4;35m                                                               \n\
+	@echo "\033[1;31m                                                               \n\
 	  ▄████████  ▄██████▄          ▄█          ▄██████▄  ███▄▄▄▄      ▄██████▄      \n\
 	 ███    ███ ███    ███        ███         ███    ███ ███▀▀▀██▄   ███    ███     \n\
 	 ███    █▀  ███    ███        ███         ███    ███ ███   ███   ███    █▀      \n\
-	 ███        ███    ███        ███         ███    ███ ███   ███  ▄███            \n\
+	 ███        ███    ███        ███ mayache ███    ███ ███   ███  ▄███            \n\
 	███████████ ███    ███        ███         ███    ███ ███   ███ ▀▀███ ████▄      \n\
 	        ███ ███    ███        ███         ███    ███ ███   ███   ███    ███     \n\
 	  ▄█    ███ ███    ███        ███▌     ▄  ███    ███ ███   ███   ███    ███     \n\
 	▄████████▀   ▀██████▀  █████  ███████▄▄██  ▀██████▀   ▀█   █▀    ████████▀      \n\
                                                                        	 		\033[0m"
-	@echo "\033[4;35m By: mayache \033[0m"
 $(LIBFT):
 	@make -C libft
 	@make -C libft bonus

@@ -6,7 +6,7 @@
 /*   By: mayache- <mayache-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 11:58:00 by mayache-          #+#    #+#             */
-/*   Updated: 2023/02/04 15:13:30 by mayache-         ###   ########.fr       */
+/*   Updated: 2023/02/08 19:58:55 by mayache-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ int	keyexit(t_info_map *map)
 int	keyhook(int ky, t_info_map *m)
 {
 	void *img_open_door;
-
+	void	*img_dr;
+	
+	img_dr = mlx_xpm_file_to_image(m->mlx, "./textures/dr.xpm", &m->i_w, &m->i_h);
 	img_open_door = mlx_xpm_file_to_image(m->mlx, "./textures/DO.xpm", &m->i_w, &m->i_h);
 	if ((ky == 2 || ky == 124) && m->map[m->yp][m->xp + 1] != '1')
 		ft_to_right(m);

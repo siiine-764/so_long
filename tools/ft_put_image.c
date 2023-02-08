@@ -6,7 +6,7 @@
 /*   By: mayache- <mayache-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:51:59 by mayache-          #+#    #+#             */
-/*   Updated: 2023/02/04 15:55:23 by mayache-         ###   ########.fr       */
+/*   Updated: 2023/02/08 19:58:39 by mayache-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,13 @@ void	ft_put1(t_info_map *m, int x, int y)
 {
 	void	*img;
 	void	*img1;
-	void	*img3;
-	void	*img_od;
 
 	img = mlx_xpm_file_to_image(m->mlx, "./textures/bg.xpm", &m->i_w, &m->i_h);
 	img1 = mlx_xpm_file_to_image(m->mlx, "./textures/wall.xpm", &m->i_w, &m->i_h);
-	img3 = mlx_xpm_file_to_image(m->mlx, "./textures/p.xpm", &m->i_w, &m->i_h);
-	img_od = mlx_xpm_file_to_image(m->mlx, "./textures/DO.xpm", &m->i_w, &m->i_h);
 	if (m->map[y][x] == '1')
 		mlx_put_image_to_window(m->mlx, m->mlx_w, img1, x * sz, y * sz);
 	if (m->map[y][x] == '0')
 		mlx_put_image_to_window(m->mlx, m->mlx_w, img, x * sz, y * sz);
-	if (m->map[y][x] == 'P')
-	{
-		mlx_put_image_to_window(m->mlx, m->mlx_w, img3, x * sz, y * sz);
-		m->xp = x;
-		m->yp = y;
-	}
 }
 
 void	ft_put2(t_info_map *m, int x, int y)
@@ -55,6 +45,19 @@ void	ft_put2(t_info_map *m, int x, int y)
 	}
 }
 
+void	ft_put3(t_info_map *m, int x, int y)
+{
+	void	*img3;
+
+	img3 = mlx_xpm_file_to_image(m->mlx, "./textures/p.xpm", &m->i_w, &m->i_h);
+	if (m->map[y][x] == 'P')
+	{
+		mlx_put_image_to_window(m->mlx, m->mlx_w, img3, x * sz, y * sz);
+		m->xp = x;
+		m->yp = y;
+	}
+}
+
 void	ft_put_image(t_info_map *m)
 {
 	int	x;
@@ -69,6 +72,7 @@ void	ft_put_image(t_info_map *m)
 		{
 			ft_put1(m, x, y);
 			ft_put2(m, x, y);
+			ft_put3(m, x, y);
 			x++;
 		}
 		y++;
