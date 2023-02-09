@@ -6,7 +6,7 @@
 /*   By: mayache- <mayache-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 11:24:21 by mayache-          #+#    #+#             */
-/*   Updated: 2023/02/07 22:52:19 by mayache-         ###   ########.fr       */
+/*   Updated: 2023/02/09 22:00:13 by mayache-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,5 @@ void message_error();
 void ft_err_message_player(int players);
 void ft_err_message_door(int doors);
 void ft_err_message_coin(int coins);
+void	ft_err_message_map(void);
 #endif
