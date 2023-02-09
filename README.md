@@ -1,4 +1,4 @@
-Best Disco So_longa Playlist :
+Best Discos to start So_longa game:
 
 - First song 🧡 
 
@@ -18,6 +18,8 @@ You must create a basic 2D game in which a dolphin
 escapes Earth after eating some fish. Instead of
 a dolphin, fish, and the Earth, you can use any
 character, any collectible and any place you want.</br>
+
+  <img src="https://media3.giphy.com/media/11BVzJf1NYWEo/giphy.gif?cid=ecf05e47f13q9kr5qx8ix93p37b0b4ytv6mqwgy2h22ol7og&rid=giphy.gif&ct=g" width="100%" height="100%" />
 
 
 <img width="2000" alt="Screen Shot 2023-01-24 at 2 17 14 PM" src="https://user-images.githubusercontent.com/80540449/214304781-fde1c7f3-5c80-4d40-a71e-0f2723121e3e.png">
