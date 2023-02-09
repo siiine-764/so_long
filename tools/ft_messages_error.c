@@ -6,7 +6,7 @@
 /*   By: mayache- <mayache-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 11:45:07 by mayache-          #+#    #+#             */
-/*   Updated: 2023/02/06 12:12:07 by mayache-         ###   ########.fr       */
+/*   Updated: 2023/02/09 22:00:59 by mayache-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,13 @@ void	ft_err_message_coin(int coins)
 {
 	if (coins == 0)
 	{
-		write(1, "where's coins, do u kidding me!!\n", 35);
+		write(1, "where's coins, do u kidding me!!\n", 34);
 		exit(1);
 	}
+}
+
+void	ft_err_message_map(void)
+{
+	write(1, "error, map invalide, u give me map incorrect!!\n",47);
+	exit(0);
 }

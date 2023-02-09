@@ -6,52 +6,92 @@
 /*   By: mayache- <mayache-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 11:40:38 by mayache-          #+#    #+#             */
-/*   Updated: 2023/02/08 18:13:04 by mayache-         ###   ########.fr       */
+/*   Updated: 2023/02/09 22:04:04 by mayache-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void check_map(char **p)
+void	ft_check_player(char **p)
 {
-    int i;
-    int players;
-    int doors;
-    int coins;
-    int k;
+	int	players;
+	int	i;
+	int	k;
 
-    i = -1;
-    players = 0;
-    doors = 0;
+	players = 0;
+	i = -1;
+	k = 0;
+	while (p[++i])
+	{
+		k = -1;
+		while (p[i][++k])
+			if (p[i][k] == 'P')
+				players++;
+	}
+	if (players > 1 || players == 0)
+		ft_err_message_player(players);
+}
+
+void	ft_check_door(char **p)
+{
+	int	i;
+	int	k;
+	int	doors;
+
+	doors = 0;
+	i = -1;
+	k = 0;
+	while (p[++i])
+	{
+		k = -1;
+		while (p[i][++k])
+			if (p[i][k] == 'E')
+				doors++;
+	}
+	if (doors > 1 || doors == 0)
+		ft_err_message_door(doors);
+}
+
+void	ft_check_coins(char **p)
+{
+	int	i;
+	int	k;
+	int	coins;
+
 	coins = 0;
-    k = 0;
+	i = -1;
+	k = 0;
+	while (p[++i])
+	{
+		k = -1;
+		while (p[i][++k])
+			if (p[i][k] == 'C')
+				coins++;
+	}
+	if (coins == 0)
+		ft_err_message_coin(coins);
+}
 
+void	check_map(char **p)
+{
+	int	i;
+	int	k;
+
+	i = -1;
+	k = 0;
 	while (p[++i])
 	{
 		k = -1;
 		while (p[i][++k])
 		{
-			if (p[i][k] == 'P')
-				players++;
-			else if (p[i][k] == 'E') 
-				doors++;
-			else if (p[i][k] == 'C') 
-				coins++;
-			else if (p[i][k] != 'P' && p[i][k] != '0' && p[i][k] != '1'
+			if (p[i][k] != 'P' && p[i][k] != '0' && p[i][k] != '1'
 				&& p[i][k] != 'C' && p[i][k] != 'E')
-				{
-					write(1, "error, map invalide, u give me map incorrect\n",45);
-				exit(0);
-				}
+				ft_err_message_map();
 		}
-		printf("%s\n", p[i]);
 	}
-	if (players > 1 || players == 0)
-		ft_err_message_player(players);
-	if (doors > 1 || doors == 0)
-		ft_err_message_door(doors);
-	if (coins == 0)
-		ft_err_message_coin(coins);
+	ft_check_player(p);
+	ft_check_door(p);
+	ft_check_coins(p);
 }
 
 // int main(void)
