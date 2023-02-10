@@ -6,7 +6,7 @@
 /*   By: mayache- <mayache-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 11:24:21 by mayache-          #+#    #+#             */
-/*   Updated: 2023/02/09 22:00:13 by mayache-         ###   ########.fr       */
+/*   Updated: 2023/02/10 18:39:24 by mayache-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,13 @@ typedef struct info_img
 	void	*img_OD;
 } t_info_img;
 
+int	ft_calculer_height(char *map);
 // functions to check map and check valid map and valid file 
 void	check_map(char **p);
+void	ft_check_width(char *map);
+void	ft_check_player(char **p);
+void	ft_check_door(char **p);
+void	ft_check_coins(char **p);
 void	ft_check_path(char **f_m);
 void	ft_check_bottom(int y, char **f_m);
 void	ft_check_right(int y, int len, char **f_m);

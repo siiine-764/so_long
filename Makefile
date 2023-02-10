@@ -15,6 +15,8 @@ SRCS =	./tools/ft_messages_error.c\
 		./tools/check_map.c\
 		./tools/ft_put_image.c\
 		./tools/ft_check_wall.c\
+		./tools/ft_h_w.c\
+		./tools/ft_read_map.c\
 
 all: $(NAME)
 
