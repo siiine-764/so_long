@@ -6,13 +6,13 @@
 /*   By: mayache- <mayache-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 11:40:38 by mayache-          #+#    #+#             */
-/*   Updated: 2023/02/10 16:45:58 by mayache-         ###   ########.fr       */
+/*   Updated: 2023/02/13 10:52:48 by mayache-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	ft_check_player(char **p)
+void	ft_check_player(char **p, t_info_map *m)
 {
 	int	players;
 	int	i;
@@ -29,10 +29,10 @@ void	ft_check_player(char **p)
 				players++;
 	}
 	if (players > 1 || players == 0)
-		ft_err_message_player(players);
+		ft_err_message_player(players, m);
 }
 
-void	ft_check_door(char **p)
+void	ft_check_door(char **p, t_info_map *m)
 {
 	int	i;
 	int	k;
@@ -49,10 +49,10 @@ void	ft_check_door(char **p)
 				doors++;
 	}
 	if (doors > 1 || doors == 0)
-		ft_err_message_door(doors);
+		ft_err_message_door(doors, m);
 }
 
-void	ft_check_coins(char **p)
+void	ft_check_coins(char **p, t_info_map *m)
 {
 	int	i;
 	int	k;
@@ -69,10 +69,10 @@ void	ft_check_coins(char **p)
 				coins++;
 	}
 	if (coins == 0)
-		ft_err_message_coin(coins);
+		ft_err_message_coin(coins, m);
 }
 
-void	check_map(char **p)
+void	check_map(char **p, t_info_map	*m)
 {
 	int	i;
 	int	k;
@@ -86,12 +86,12 @@ void	check_map(char **p)
 		{
 			if (p[i][k] != 'P' && p[i][k] != '0' && p[i][k] != '1'
 				&& p[i][k] != 'C' && p[i][k] != 'E')
-				ft_err_message_map();
+				ft_err_message_map(m);
 		}
 	}
-	ft_check_player(p);
-	ft_check_door(p);
-	ft_check_coins(p);
+	ft_check_player(p, m);
+	ft_check_door(p, m);
+	ft_check_coins(p, m);
 }
 
 // int main(void)

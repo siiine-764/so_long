@@ -6,7 +6,7 @@
 /*   By: mayache- <mayache-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 19:13:56 by mayache-          #+#    #+#             */
-/*   Updated: 2023/02/10 19:14:59 by mayache-         ###   ########.fr       */
+/*   Updated: 2023/02/13 10:59:42 by mayache-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	**rd_map(char *map11)
 
 	rd_line = -1;
 	map = malloc(sizeof(char *));
-	//map[0] = '\0';
+	map[0] = '\0';
 	rd_line = open(map11, O_RDONLY);
 	line = get_next_line(rd_line);
 	while (line != '\0')
@@ -47,6 +47,7 @@ char	**rd_map(char *map11)
 		}
 		line = get_next_line(rd_line);
 	}
+	free(map);
 	return (ft_split(map, '\n'));
 }
 
@@ -61,14 +62,15 @@ void	ft_read_map(char *map)
 	rd_id = ft_read_id(map);
 	line = get_next_line(rd_id);
 	w = ft_strlen(line) - 1;
+	free(line);
 	ft_check_width(map);
 	h = ft_calculer_height(map);
 	m.map = rd_map(map);
 	m.mapfake = rd_map(map);
-	check_map(m.map);
-	ft_check_path(m.mapfake);
+	check_map(m.map, &m);
+	ft_check_path(m.mapfake, m);
 	m.mlx = mlx_init();
-	m.mlx_w = mlx_new_window(m.mlx, sz * w, sz * h, "My Game");
+	m.mlx_w = mlx_new_window(m.mlx, SZ * w, SZ * h, "My Game");
 	ft_put_image(&m);
 	mlx_hook(m.mlx_w, 2, 0, &keyhook, &m);
 	mlx_hook(m.mlx_w, 17, 0, keyexit, &m);

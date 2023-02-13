@@ -6,7 +6,7 @@
 /*   By: mayache- <mayache-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 19:12:03 by mayache-          #+#    #+#             */
-/*   Updated: 2023/02/10 19:14:20 by mayache-         ###   ########.fr       */
+/*   Updated: 2023/02/11 15:02:23 by mayache-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@ int	ft_calculer_height(char *map)
 	height = 0;
 	rd_id = ft_read_id(map);
 	line = get_next_line(rd_id);
+	free(line);
 	while (line != '\0')
 	{
 		height++;
 		line = get_next_line(rd_id);
+		free(line);
 	}
 	return (height);
 }
@@ -42,6 +44,7 @@ void	ft_check_width(char *map)
 	rd_id = ft_read_id(map);
 	line = get_next_line(rd_id);
 	width = ft_strlen(line) - 1;
+	free(line);
 	while (line != '\0' && h > 2)
 	{
 		line = get_next_line(rd_id);
@@ -52,5 +55,6 @@ void	ft_check_width(char *map)
 			exit(0);
 		}
 		h--;
+		free(line);
 	}
 }

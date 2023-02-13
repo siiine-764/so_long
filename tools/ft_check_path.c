@@ -6,7 +6,7 @@
 /*   By: mayache- <mayache-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 11:21:44 by mayache-          #+#    #+#             */
-/*   Updated: 2023/02/10 16:36:44 by mayache-         ###   ########.fr       */
+/*   Updated: 2023/02/13 10:58:54 by mayache-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	ft_check_finish(char **f_m)
 			if (f_m[y][x] == 'C' || f_m[y][x] == 'E')
 			{
 				write(1, "error in the map\n", 17);
+				free(f_m);
 				exit(0);
 			}
 			x++;
@@ -73,21 +74,21 @@ void	ft_position_player(char **f_m)
 	ft_flood_fill(f_m, xp, yp);
 }
 
-void	ft_check_path(char **f_m)
+void	ft_check_path(char **f_m, t_info_map *m)
 {
 	int	y;
 	int	len;
 
 	len = 0;
 	y = 0;
-	ft_check_left(f_m);
-	ft_check_top(f_m);
+	ft_check_left(f_m, m);
+	ft_check_top(f_m, m);
 	while (f_m[y])
 		y++;
 	y--;
-	ft_check_bottom(y, f_m);
+	ft_check_bottom(y, f_m, m);
 	len = ft_strlen((const char *)f_m[y]);
-	ft_check_right(y, len, f_m);
-	ft_position_player(f_m);
-	ft_check_finish(f_m);
+	ft_check_right(y, len, f_m, m);
+	ft_position_player(f_m, m);
+	ft_check_finish(f_m, m);
 }

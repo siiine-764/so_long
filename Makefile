@@ -17,6 +17,8 @@ SRCS =	./tools/ft_messages_error.c\
 		./tools/ft_check_wall.c\
 		./tools/ft_h_w.c\
 		./tools/ft_read_map.c\
+		./tools/ft_destroy.c\
+		./tools/ft_tools_movement.c\
 
 all: $(NAME)
 
