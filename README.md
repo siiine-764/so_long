@@ -23,11 +23,11 @@ https://miro.com/welcomeonboard/NmJ2NDIyNlNRMW9oN290QkVWOEhVaU5GcnRFQkpTVzFGNzNh
 
 <img width="2000" alt="Screen Shot 2023-01-24 at 2 17 14 PM" src="https://user-images.githubusercontent.com/80540449/214304781-fde1c7f3-5c80-4d40-a71e-0f2723121e3e.png">
 
-- How to start play this game :
+- <h1>Execution : </h1>
 
-  1. make all
+    1- <code>make</code> or <code>make all</code>
 
-  2. ./so_long "./map/[pick your map you want.]"
+    2- <code>./so_long "./map/[pick your map you want.]"</code>
  
 <img width="2000" alt="Screen Shot 2023-02-08 at 9 20 14 PM" src="https://user-images.githubusercontent.com/80540449/217642251-462f9f74-2fb2-4428-9bb5-86c127aafe37.png">
 
