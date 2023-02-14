@@ -19,6 +19,8 @@ escapes Earth after eating some fish. Instead of
 a dolphin, fish, and the Earth, you can use any
 character, any collectible and any place you want.</br>
 
+https://miro.com/welcomeonboard/NmJ2NDIyNlNRMW9oN290QkVWOEhVaU5GcnRFQkpTVzFGNzNhU0JRczI2T2t3U3hZd3Z5ZFZSOHp4YTRRWXppOXwzNDU4NzY0NTM5MDg3OTIwNDMwfDI=?share_link_id=630100251070
+
 <img width="2000" alt="Screen Shot 2023-01-24 at 2 17 14 PM" src="https://user-images.githubusercontent.com/80540449/214304781-fde1c7f3-5c80-4d40-a71e-0f2723121e3e.png">
 
 - How to start play this game :
