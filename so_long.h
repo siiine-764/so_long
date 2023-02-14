@@ -6,7 +6,7 @@
 /*   By: mayache- <mayache-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 11:24:21 by mayache-          #+#    #+#             */
-/*   Updated: 2023/02/13 10:59:25 by mayache-         ###   ########.fr       */
+/*   Updated: 2023/02/14 12:13:22 by mayache-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 # include <mlx.h>
 # include <unistd.h>
 # include <fcntl.h>
-# include <stdio.h>
-# include <string.h>
 
 # define SZ 40
 # define PLAY "./textures/p.xpm"
@@ -58,7 +56,7 @@ typedef struct info_map
 
 int		ft_calculer_height(char *map);
 // functions to check map and check valid map and valid file 
-void	ft_check_opendoor_playerondoor(t_info_map *m);
+void	ft_check_images(t_info_map *m);
 void	check_map(char **p, t_info_map *m);
 void	ft_check_width(char *map);
 void	ft_check_player(char **p, t_info_map *m);
@@ -71,7 +69,7 @@ void	ft_check_left(char **f_m, t_info_map *m);
 void	ft_check_top(char **f_m, t_info_map *m);
 void	ft_position_player(char **f_m);
 void	ft_flood_fill(char **f_m, int xp, int yp);
-void	ft_check_finish(char **f_m);
+void	ft_check_finish(char **f_m, t_info_map *m);
 // functions to read map //
 char	*ft_strjoin(char const *s1, char const *s2);
 void	ft_read_map(char *map);

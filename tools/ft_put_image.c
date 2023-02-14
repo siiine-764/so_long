@@ -6,7 +6,7 @@
 /*   By: mayache- <mayache-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:51:59 by mayache-          #+#    #+#             */
-/*   Updated: 2023/02/13 10:54:36 by mayache-         ###   ########.fr       */
+/*   Updated: 2023/02/14 12:08:01 by mayache-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ void	ft_put2(t_info_map *m, int x, int y)
 	m->dr = mlx_xpm_file_to_image(m->mlx, DR, &m->i_w, &m->i_h);
 	if (!m->dr)
 	{
+		ft_destroy(m);
 		while ((m->map)[++i])
 			free((m->map)[i]);
-		ft_destroy(m);
 		exit(1);
 	}
 	if (m->map[y][x] == 'E')
@@ -59,13 +59,6 @@ void	ft_put2(t_info_map *m, int x, int y)
 		m->y_e = y;
 	}
 	m->c = mlx_xpm_file_to_image(m->mlx, COIN, &m->i_w, &m->i_h);
-	if (!m->c)
-	{
-		ft_destroy(m);
-		while ((m->map)[++i])
-			free((m->map)[i]);
-		exit(1);
-	}
 	if (m->map[y][x] == 'C')
 	{
 		mlx_put_image_to_window(m->mlx, m->mlx_w, m->c, x * SZ, y * SZ);
@@ -94,7 +87,7 @@ void	ft_put3(t_info_map *m, int x, int y)
 	}
 }
 
-void	ft_check_opendoor_playerondoor(t_info_map *m)
+void	ft_check_images(t_info_map *m)
 {
 	size_t	i;
 
@@ -108,7 +101,8 @@ void	ft_check_opendoor_playerondoor(t_info_map *m)
 		exit(1);
 	}
 	m->pd = mlx_xpm_file_to_image(m->mlx, POND, &m->i_w, &m->i_h);
-	if (!m->pd)
+	m->c = mlx_xpm_file_to_image(m->mlx, COIN, &m->i_w, &m->i_h);
+	if (!m->c)
 	{
 		ft_destroy(m);
 		while ((m->map)[++i])
@@ -124,7 +118,7 @@ void	ft_put_image(t_info_map *m)
 
 	y = 0;
 	initialize_vars(m);
-	ft_check_opendoor_playerondoor(m);
+	ft_check_images(m);
 	while (m->map[y])
 	{
 		x = 0;

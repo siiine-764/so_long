@@ -6,7 +6,7 @@
 /*   By: mayache- <mayache-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 11:40:38 by mayache-          #+#    #+#             */
-/*   Updated: 2023/02/13 10:52:48 by mayache-         ###   ########.fr       */
+/*   Updated: 2023/02/14 11:24:01 by mayache-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,36 +93,3 @@ void	check_map(char **p, t_info_map	*m)
 	ft_check_door(p, m);
 	ft_check_coins(p, m);
 }
-
-// int main(void)
-// {
-
-//   int rd_line;
-//     char *map;
-//   char *line;
-//     int width;
-//     int height;
-//     rd_line = -1;
-//     map = "";
-//     rd_line = open("../maps/map2.ber", O_RDONLY);
-
-// 	    line = get_next_line(rd_line);
-//         width = ft_strlen(line) - 1;
-//     height = 0;
-//     while(line != '\0')
-//     {
-//         height++;
-//         //line = get_next_line(rd_line);
-//         if (map)
-//             map = ft_strjoin(map, line);
-//         else
-//             map = ft_strjoin(ft_strdup(""), line);
-//         line = get_next_line(rd_line);
-
-//     }
-// 	t_info_map map22;
-//     //printf("%s \n", map);
-//     //printf("%s\n", line);
-//     map22.map = ft_split(map, '\n');
-//     check_player( map22.map);
-// }

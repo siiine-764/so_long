@@ -6,7 +6,7 @@
 /*   By: mayache- <mayache-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 11:45:07 by mayache-          #+#    #+#             */
-/*   Updated: 2023/02/13 10:54:05 by mayache-         ###   ########.fr       */
+/*   Updated: 2023/02/14 12:11:44 by mayache-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	ft_err_message_player(int players, t_info_map *m)
 	{
 		write(1, "wtf UGiveMeMorePlayerWhatDoUThinkUrselfDoing,", 45);
 		write(1, "RespectMyRulesPlay\n", 19);
-
 		while ((m->map)[++i])
 			free((m->map)[i]);
 		exit(1);
@@ -40,7 +39,6 @@ void	ft_err_message_player(int players, t_info_map *m)
 	else if (players == 0)
 	{
 		write(1, "where's player, do u kidding me!!\n", 33);
-
 		while ((m->map)[++i])
 			free((m->map)[i]);
 		exit(1);
@@ -54,9 +52,8 @@ void	ft_err_message_door(int doors, t_info_map *m)
 	i = -1;
 	if (doors > 1)
 	{
-		write(1, "wtf u give me more doors do u wanna finished", 44);
+		write(1, "wtf u give me more doors do u wanna finished ", 45);
 		write(1, "this game by many doors respect my rules play\n", 46);
-
 		while ((m->map)[++i])
 			free((m->map)[i]);
 		exit(1);
@@ -64,7 +61,6 @@ void	ft_err_message_door(int doors, t_info_map *m)
 	else if (doors == 0)
 	{
 		write(1, "where's door, do u kidding me!!\n", 33);
-
 		while ((m->map)[++i])
 			free((m->map)[i]);
 		exit(1);
@@ -79,7 +75,6 @@ void	ft_err_message_coin(int coins, t_info_map *m)
 	if (coins == 0)
 	{
 		write(1, "where's coins, do u kidding me!!\n", 34);
-
 		while ((m->map)[++i])
 			free((m->map)[i]);
 		exit(1);
@@ -91,8 +86,8 @@ void	ft_err_message_map(t_info_map *m)
 	size_t	i;
 
 	i = -1;
-	write(1, "error, map invalide, u give me map incorrect!!\n", 47);
+	write(1, "error, map invalide, incorrect map!!\n", 37);
 	while ((m->map)[++i])
 		free((m->map)[i]);
-	exit(0);
+	exit(1);
 }

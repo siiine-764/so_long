@@ -6,7 +6,7 @@
 /*   By: mayache- <mayache-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 11:21:44 by mayache-          #+#    #+#             */
-/*   Updated: 2023/02/13 10:58:54 by mayache-         ###   ########.fr       */
+/*   Updated: 2023/02/14 11:45:16 by mayache-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,13 @@ void	ft_flood_fill(char **f_m, int xp, int yp)
 	}
 }
 
-void	ft_check_finish(char **f_m)
+void	ft_check_finish(char **f_m, t_info_map *m)
 {
-	int	x;
-	int	y;
+	int		x;
+	int		y;
+	size_t	i;
 
+	i = -1;
 	y = 0;
 	while (f_m[y])
 	{
@@ -37,9 +39,10 @@ void	ft_check_finish(char **f_m)
 		{
 			if (f_m[y][x] == 'C' || f_m[y][x] == 'E')
 			{
-				write(1, "error in the map\n", 17);
-				free(f_m);
-				exit(0);
+				write(1, "error in this map\n", 18);
+				while ((m->mapfake)[++i])
+					free((m->mapfake)[i]);
+				exit(1);
 			}
 			x++;
 		}
@@ -89,6 +92,6 @@ void	ft_check_path(char **f_m, t_info_map *m)
 	ft_check_bottom(y, f_m, m);
 	len = ft_strlen((const char *)f_m[y]);
 	ft_check_right(y, len, f_m, m);
-	ft_position_player(f_m, m);
+	ft_position_player(f_m);
 	ft_check_finish(f_m, m);
 }

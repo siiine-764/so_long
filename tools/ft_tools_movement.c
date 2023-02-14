@@ -6,7 +6,7 @@
 /*   By: mayache- <mayache-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 22:31:10 by mayache-          #+#    #+#             */
-/*   Updated: 2023/02/12 22:58:30 by mayache-         ###   ########.fr       */
+/*   Updated: 2023/02/14 11:15:14 by mayache-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_put_player_on_door(t_info_map *m)
 			free((m->map)[i]);
 		exit(1);
 	}
-	mlx_put_image_to_window(m->mlx, m->mlx_w, m->bg, m->xp * sz, m->yp * SZ);
+	mlx_put_image_to_window(m->mlx, m->mlx_w, m->bg, m->xp * SZ, m->yp * SZ);
 	m->dr = mlx_xpm_file_to_image(m->mlx, DR, &m->i_w, &m->i_h);
 	if (!m->dr)
 	{

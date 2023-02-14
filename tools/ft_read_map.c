@@ -6,7 +6,7 @@
 /*   By: mayache- <mayache-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 19:13:56 by mayache-          #+#    #+#             */
-/*   Updated: 2023/02/13 10:59:42 by mayache-         ###   ########.fr       */
+/*   Updated: 2023/02/14 11:13:46 by mayache-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	ft_read_map(char *map)
 	m.map = rd_map(map);
 	m.mapfake = rd_map(map);
 	check_map(m.map, &m);
-	ft_check_path(m.mapfake, m);
+	ft_check_path(m.mapfake, &m);
 	m.mlx = mlx_init();
 	m.mlx_w = mlx_new_window(m.mlx, SZ * w, SZ * h, "My Game");
 	ft_put_image(&m);

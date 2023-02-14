@@ -6,7 +6,7 @@
 /*   By: mayache- <mayache-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 19:12:03 by mayache-          #+#    #+#             */
-/*   Updated: 2023/02/11 15:02:23 by mayache-         ###   ########.fr       */
+/*   Updated: 2023/02/14 12:12:24 by mayache-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	ft_check_width(char *map)
 		w = ft_strlen(line) - 1;
 		if (w != width)
 		{
-			printf("error 💀\n");
+			ft_printf("error 💀\n");
 			exit(0);
 		}
 		h--;

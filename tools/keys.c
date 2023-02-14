@@ -6,7 +6,7 @@
 /*   By: mayache- <mayache-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 11:58:00 by mayache-          #+#    #+#             */
-/*   Updated: 2023/02/12 22:59:22 by mayache-         ###   ########.fr       */
+/*   Updated: 2023/02/14 11:44:03 by mayache-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,10 @@ int	keyexit(t_info_map *map)
 	size_t	i;
 
 	i = -1;
-	ft_printf("sexy bitch\n");
-	// map->map = NULL;
+	ft_printf("game exit :\\\n");
 	ft_destroy(map);
 	while ((map->map)[++i])
 		free((map->map)[i]);
-	// while (1);
 	exit(0);
 }
 
@@ -45,9 +43,10 @@ int	keyhook(int ky, t_info_map *m)
 			m->x_e * SZ, m->y_e * SZ);
 	if (ky == 53)
 	{
+		ft_printf("game exit :\\\n");
+		ft_destroy(m);
 		while ((m->map)[++i])
 			free((m->map)[i]);
-		ft_destroy(m);
 		exit(0);
 	}
 	return (0);
